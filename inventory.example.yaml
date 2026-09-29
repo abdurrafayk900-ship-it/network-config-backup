@@ -1,0 +1,28 @@
+# Copy to inventory.yaml and export the credentials:
+#   export NET_USER=admin NET_PASS='...' NET_ENABLE='...'
+defaults:
+  username: ${NET_USER}
+  password: ${NET_PASS}
+  secret: ${NET_ENABLE}
+  device_type: cisco_ios
+
+devices:
+  - name: R1
+    host: 192.168.99.1
+    groups: [core, lab]
+  - name: R2
+    host: 10.0.12.2
+    groups: [core, lab]
+  - name: R3
+    host: 10.0.13.2
+    groups: [core, lab]
+  - name: SW1
+    host: 192.168.99.11
+    groups: [access, lab]
+  - name: SW2
+    host: 192.168.99.12
+    groups: [access, lab]
+  - name: EDGE-FW
+    host: 10.0.0.254
+    device_type: fortinet
+    groups: [security]
